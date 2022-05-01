@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">huma-sample</string>
+
+    <string name="error_server">Server Error!</string>
+    <string name="error_general">A problem occurred!</string>
+    <string name="error_connection">Connect to Internet</string>
+
+    <string name="msg_empty_not_allow">This item cannot be empty!</string>
+    <string name="msg_retry">Retry</string>
+</resources>
