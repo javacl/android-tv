@@ -5,5 +5,8 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class VideoEntity(
-    @PrimaryKey val id: Int = 0
+    @PrimaryKey val id: Int = 0,
+    val titleFa: String = "",
+    val titleEn: String = "",
+    val poster: String = ""
 )

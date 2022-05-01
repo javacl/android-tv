@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import androidx.leanback.app.BrowseSupportFragment
+import androidx.fragment.app.Fragment
 
-abstract class BaseFragment<V : ViewDataBinding> : BrowseSupportFragment() {
+abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
 
     private var _binding: V? = null
 
