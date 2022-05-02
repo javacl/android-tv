@@ -10,4 +10,6 @@ class VideoRepository @Inject constructor(
     private val videoRemoteDataSource: VideoRemoteDataSource,
     private val networkHandler: NetworkHandler
 ) {
+
+    fun getVideoListLocal() = videoLocalDataSource.getVideoList()
 }

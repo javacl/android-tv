@@ -3,12 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="@dimen/item_video_width"
     android:layout_height="@dimen/item_video_height"
-    android:layout_margin="@dimen/spacing_2x">
+    android:layout_margin="@dimen/spacing_base">
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <androidx.leanback.widget.ImageCardView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

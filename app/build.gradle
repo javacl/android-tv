@@ -70,7 +70,8 @@ android {
 dependencies {
 
     // Leanback
-    implementation 'androidx.leanback:leanback:1.0.0'
+    implementation "androidx.leanback:leanback:1.0.0"
+    implementation "androidx.leanback:leanback-paging:1.1.0-alpha09"
 
     // UI
     implementation "androidx.viewpager2:viewpager2:1.0.0"
@@ -136,7 +137,7 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:1.4.1"
 
     // Utils
-    api "com.jakewharton.timber:timber:4.7.1"
+    api "com.jakewharton.timber:timber:5.0.1"
 }
 
 kapt {

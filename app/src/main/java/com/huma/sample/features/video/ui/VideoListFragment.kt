@@ -3,18 +3,19 @@ package com.huma.sample.features.video.ui
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import com.huma.sample.R
-import com.huma.sample.core.util.ui.BaseFragment
-import com.huma.sample.databinding.FragmentVideoListBinding
+import androidx.leanback.app.RowsSupportFragment
+import androidx.leanback.widget.ArrayObjectAdapter
+import androidx.leanback.widget.ListRow
+import androidx.leanback.widget.ListRowPresenter
+import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class VideoListFragment : BaseFragment<FragmentVideoListBinding>() {
+class VideoListFragment : RowsSupportFragment() {
 
     private val viewModel by viewModels<VideoListViewModel>()
-
-    override val layoutId: Int
-        get() = R.layout.fragment_video_list
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,5 +28,13 @@ class VideoListFragment : BaseFragment<FragmentVideoListBinding>() {
 
     private fun initView() {}
 
-    private fun initObservation() {}
+    private fun initObservation() {
+
+        lifecycleScope.launch {
+
+            viewModel.videoList.collect {
+                adapter = it
+            }
+        }
+    }
 }
