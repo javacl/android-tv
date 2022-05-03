@@ -7,4 +7,6 @@
 
     <string name="msg_empty_not_allow">This item cannot be empty!</string>
     <string name="msg_retry">Retry</string>
+
+    <string name="txt_title">برترین فیلم های جهان بر اساس رتبه بندی سایت IMDB</string>
 </resources>

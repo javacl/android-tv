@@ -11,7 +11,7 @@ import com.huma.sample.features.video.data.entities.VideoEntity
 class VideoListPresenter : Presenter() {
 
     override fun onCreateViewHolder(parent: ViewGroup): ViewHolder {
-        val imageCardView = object : ImageCardView(parent.context) {}
+        val imageCardView = ImageCardView(parent.context)
         imageCardView.isFocusable = true
         imageCardView.isFocusableInTouchMode = true
         return ViewHolder(imageCardView)

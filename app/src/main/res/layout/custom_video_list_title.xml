@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_icon_customVideoListTitle"
+        android:layout_width="@dimen/spacing_12x"
+        android:layout_height="@dimen/spacing_12x"
+        android:layout_marginStart="@dimen/spacing_2x"
+        android:layout_marginTop="@dimen/spacing_4x"
+        android:layout_marginEnd="@dimen/spacing_2x"
+        android:layout_marginBottom="@dimen/spacing_4x"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_movie" />
+
+    <TextView
+        android:id="@+id/tv_title_customVideoListTitle"
+        style="@style/TextView.ExtraBold.6x.TextPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_title" />
+
+</merge>

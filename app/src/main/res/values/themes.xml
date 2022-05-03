@@ -27,5 +27,9 @@
         <item name="colorSurface">@color/gray_EEF2F5</item>
         <item name="colorGreen">@color/green_00DAA2</item>
         <item name="colorRed">@color/red_E64274</item>
+
+        <item name="browseTitleViewLayout">@layout/view_video_list_title</item>
+        <item name="browseRowsMarginTop">110dp</item>
     </style>
+
 </resources>

@@ -7,8 +7,11 @@
         <entry key="..\:/work/android/git/huma-sample/app/src/main/res/drawable/ic_connection_error.xml" value="0.1" />
         <entry key="..\:/work/android/git/huma-sample/app/src/main/res/layout/activity_details.xml" value="0.358695652173913" />
         <entry key="..\:/work/android/git/huma-sample/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/work/android/git/huma-sample/app/src/main/res/layout/custom_title_view.xml" value="0.33" />
+        <entry key="..\:/work/android/git/huma-sample/app/src/main/res/layout/custom_video_list_title.xml" value="0.18820224719101122" />
         <entry key="..\:/work/android/git/huma-sample/app/src/main/res/layout/fragment_video_list.xml" value="0.1" />
         <entry key="..\:/work/android/git/huma-sample/app/src/main/res/layout/item_video_list.xml" value="0.1" />
+        <entry key="..\:/work/android/git/huma-sample/app/src/main/res/layout/view_video_list_title.xml" value="0.358695652173913" />
       </map>
     </option>
   </component>
