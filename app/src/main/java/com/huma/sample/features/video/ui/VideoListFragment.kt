@@ -21,6 +21,16 @@ class VideoListFragment : VerticalGridSupportFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initValue()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initView()
+        initObservation()
+    }
+
+    private fun initValue() {
 
         val verticalGridPresenter = VerticalGridPresenter()
         verticalGridPresenter.numberOfColumns = 10
@@ -34,15 +44,6 @@ class VideoListFragment : VerticalGridSupportFragment() {
         }
         adapter = videoListAdapter
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        initValue()
-        initView()
-        initObservation()
-    }
-
-    private fun initValue() {}
 
     private fun initView() {}
 
