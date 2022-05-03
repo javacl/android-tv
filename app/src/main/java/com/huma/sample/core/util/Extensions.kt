@@ -5,9 +5,9 @@ import android.content.Context
 import android.util.TypedValue
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.AttrRes
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
@@ -21,7 +21,7 @@ fun Context.hideKeyboard(view: View) {
     inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
 }
 
-fun AppCompatImageView.loadImageWithGlide(url: String?) {
+fun ImageView.loadImageWithGlide(url: String?) {
     GlideApp.with(this)
         .load(url)
         .transition(withCrossFade())

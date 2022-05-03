@@ -28,7 +28,7 @@
     <dimen name="radius_medium">6dp</dimen>
     <dimen name="radius_large">24dp</dimen>
     <dimen name="item_video_height">200dp</dimen>
-    <dimen name="item_video_width">300dp</dimen>
+    <dimen name="item_video_width">170dp</dimen>
 
     <dimen name="text_1x">10sp</dimen>
     <dimen name="text_2x">12sp</dimen>
