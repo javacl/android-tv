@@ -1,21 +1,32 @@
 package com.huma.sample.features.video.data
 
-import com.huma.sample.core.db.AppDb
+import android.content.Context
+import androidx.leanback.widget.ArrayObjectAdapter
+import androidx.leanback.widget.HeaderItem
+import androidx.leanback.widget.ListRow
+import androidx.leanback.widget.ListRowPresenter
+import com.huma.sample.R
 import com.huma.sample.features.video.data.entities.VideoEntity
+import com.huma.sample.features.video.ui.VideoListPresenter
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class VideoLocalDataSource @Inject constructor(
-    private val appDb: AppDb,
-    private val videoDao: VideoDao
+    @ApplicationContext private val context: Context
 ) {
 
     fun getVideoList() = flow {
         emit(
-            ArrayList<VideoEntity>().apply {
-                add(
+            ArrayObjectAdapter(ListRowPresenter()).apply {
+
+                val videoListPresenter = VideoListPresenter()
+
+                val comedyListHeader = HeaderItem(context.getString(R.string.label_comedy))
+                val comedyListAdapter = ArrayObjectAdapter(videoListPresenter)
+                comedyListAdapter.add(
                     VideoEntity(
                         id = 1,
                         titleFa = "رستگاری در شاوشنک",
@@ -23,7 +34,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0111161_poster.jpg"
                     )
                 )
-                add(
+                comedyListAdapter.add(
                     VideoEntity(
                         id = 2,
                         titleFa = "پدر خوانده 1",
@@ -31,7 +42,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0068646_poster.jpg"
                     )
                 )
-                add(
+                comedyListAdapter.add(
                     VideoEntity(
                         id = 3,
                         titleFa = "پدر خوانده 2",
@@ -39,7 +50,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0071562_poster.jpg"
                     )
                 )
-                add(
+                comedyListAdapter.add(
                     VideoEntity(
                         id = 4,
                         titleFa = "شوالیه تاریکی",
@@ -47,7 +58,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0468569_poster.jpg"
                     )
                 )
-                add(
+                comedyListAdapter.add(
                     VideoEntity(
                         id = 5,
                         titleFa = "12 مرد خشن",
@@ -55,7 +66,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0050083_poster.jpg"
                     )
                 )
-                add(
+                comedyListAdapter.add(
                     VideoEntity(
                         id = 6,
                         titleFa = "فهرست شیندلر",
@@ -63,7 +74,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0108052_poster.jpg"
                     )
                 )
-                add(
+                comedyListAdapter.add(
                     VideoEntity(
                         id = 7,
                         titleFa = "قصه عامه پسند",
@@ -71,7 +82,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0110912_poster.jpg"
                     )
                 )
-                add(
+                comedyListAdapter.add(
                     VideoEntity(
                         id = 8,
                         titleFa = "ارباب حلقه ها 3",
@@ -79,7 +90,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0167260_poster.jpg"
                     )
                 )
-                add(
+                comedyListAdapter.add(
                     VideoEntity(
                         id = 9,
                         titleFa = "خوب بد زشت",
@@ -87,7 +98,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0060196_poster.jpg"
                     )
                 )
-                add(
+                comedyListAdapter.add(
                     VideoEntity(
                         id = 10,
                         titleFa = "باشگاه مشت زنی",
@@ -95,7 +106,11 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0137523_poster.jpg"
                     )
                 )
-                add(
+                add(ListRow(comedyListHeader, comedyListAdapter))
+
+                val imaginaryListHeader = HeaderItem(context.getString(R.string.label_imaginary))
+                val imaginaryListAdapter = ArrayObjectAdapter(videoListPresenter)
+                imaginaryListAdapter.add(
                     VideoEntity(
                         id = 11,
                         titleFa = "ارباب حلقه ها 1",
@@ -103,7 +118,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0120737_poster.jpg"
                     )
                 )
-                add(
+                imaginaryListAdapter.add(
                     VideoEntity(
                         id = 12,
                         titleFa = "جنگ ستارگان 5",
@@ -111,7 +126,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0080684_poster.jpg"
                     )
                 )
-                add(
+                imaginaryListAdapter.add(
                     VideoEntity(
                         id = 13,
                         titleFa = "فارست گامپ",
@@ -119,7 +134,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0109830_poster.jpg"
                     )
                 )
-                add(
+                imaginaryListAdapter.add(
                     VideoEntity(
                         id = 14,
                         titleFa = "تلقین",
@@ -127,7 +142,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt1375666_poster.jpg"
                     )
                 )
-                add(
+                imaginaryListAdapter.add(
                     VideoEntity(
                         id = 15,
                         titleFa = "ارباب حلقه ها 2",
@@ -135,7 +150,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0167261_poster.jpg"
                     )
                 )
-                add(
+                imaginaryListAdapter.add(
                     VideoEntity(
                         id = 16,
                         titleFa = "دیوانه ای از قفس پرید",
@@ -143,7 +158,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0073486_poster.jpg"
                     )
                 )
-                add(
+                imaginaryListAdapter.add(
                     VideoEntity(
                         id = 17,
                         titleFa = "رفقای خوب",
@@ -151,7 +166,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0099685_poster.jpg"
                     )
                 )
-                add(
+                imaginaryListAdapter.add(
                     VideoEntity(
                         id = 18,
                         titleFa = "ماتریکس 1",
@@ -159,7 +174,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0133093_poster.jpg"
                     )
                 )
-                add(
+                imaginaryListAdapter.add(
                     VideoEntity(
                         id = 19,
                         titleFa = "هفت سامورایی",
@@ -167,7 +182,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0047478_poster.jpg"
                     )
                 )
-                add(
+                imaginaryListAdapter.add(
                     VideoEntity(
                         id = 20,
                         titleFa = "جنگ ستارگان 4",
@@ -175,7 +190,11 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0076759_poster.jpg"
                     )
                 )
-                add(
+                add(ListRow(imaginaryListHeader, imaginaryListAdapter))
+
+                val scientificListHeader = HeaderItem(context.getString(R.string.label_scientific))
+                val scientificListAdapter = ArrayObjectAdapter(videoListPresenter)
+                scientificListAdapter.add(
                     VideoEntity(
                         id = 21,
                         titleFa = "شهر خدا",
@@ -183,7 +202,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0317248_poster.jpg"
                     )
                 )
-                add(
+                scientificListAdapter.add(
                     VideoEntity(
                         id = 22,
                         titleFa = "هفت",
@@ -191,7 +210,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0114369_poster.jpg"
                     )
                 )
-                add(
+                scientificListAdapter.add(
                     VideoEntity(
                         id = 23,
                         titleFa = "سکوت بره ها",
@@ -199,7 +218,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0102926_poster.jpg"
                     )
                 )
-                add(
+                scientificListAdapter.add(
                     VideoEntity(
                         id = 24,
                         titleFa = "زندگی شگفت انگیز",
@@ -207,7 +226,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0038650_poster.jpg"
                     )
                 )
-                add(
+                scientificListAdapter.add(
                     VideoEntity(
                         id = 25,
                         titleFa = "مظنونین همیشگی",
@@ -215,7 +234,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0114814_poster.jpg"
                     )
                 )
-                add(
+                scientificListAdapter.add(
                     VideoEntity(
                         id = 26,
                         titleFa = "زندگی زیباست",
@@ -223,7 +242,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0118799_poster.jpg"
                     )
                 )
-                add(
+                scientificListAdapter.add(
                     VideoEntity(
                         id = 27,
                         titleFa = "لئون حرفه ای",
@@ -231,7 +250,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0110413_poster.jpg"
                     )
                 )
-                add(
+                scientificListAdapter.add(
                     VideoEntity(
                         id = 28,
                         titleFa = "شهر اشباح",
@@ -239,7 +258,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0245429_poster.jpg"
                     )
                 )
-                add(
+                scientificListAdapter.add(
                     VideoEntity(
                         id = 29,
                         titleFa = "نجات سرباز رایان",
@@ -247,7 +266,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0120815_poster.jpg"
                     )
                 )
-                add(
+                scientificListAdapter.add(
                     VideoEntity(
                         id = 30,
                         titleFa = "روزی روزگاری در غرب",
@@ -255,6 +274,7 @@ class VideoLocalDataSource @Inject constructor(
                         poster = "https://moviesapi.ir/images/tt0064116_poster.jpg"
                     )
                 )
+                add(ListRow(scientificListHeader, scientificListAdapter))
             }
         )
     }

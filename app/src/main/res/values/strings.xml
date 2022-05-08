@@ -9,4 +9,8 @@
     <string name="msg_retry">Retry</string>
 
     <string name="txt_title">برترین فیلم های جهان بر اساس رتبه بندی سایت IMDB</string>
+
+    <string name="label_comedy">کمدی</string>
+    <string name="label_imaginary">تخیلی</string>
+    <string name="label_scientific">علمی</string>
 </resources>
