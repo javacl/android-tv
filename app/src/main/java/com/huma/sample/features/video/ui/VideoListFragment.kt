@@ -13,6 +13,11 @@ class VideoListFragment : BrowseSupportFragment() {
 
     private val viewModel by viewModels<VideoListViewModel>()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        headersState = HEADERS_DISABLED
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initValue()
