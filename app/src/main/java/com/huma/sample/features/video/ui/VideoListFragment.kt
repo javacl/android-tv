@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.leanback.app.BrowseSupportFragment
+import androidx.leanback.widget.Presenter
+import androidx.leanback.widget.PresenterSelector
 import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -15,17 +17,24 @@ class VideoListFragment : BrowseSupportFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        headersState = HEADERS_DISABLED
+        initValue()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initValue()
         initView()
         initObservation()
     }
 
-    private fun initValue() {}
+    private fun initValue() {
+
+        headersState = HEADERS_DISABLED
+        setHeaderPresenterSelector(object : PresenterSelector() {
+            override fun getPresenter(item: Any?): Presenter {
+                return VideoListRowHeaderPresenter()
+            }
+        })
+    }
 
     private fun initView() {}
 

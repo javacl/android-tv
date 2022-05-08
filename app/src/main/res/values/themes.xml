@@ -10,7 +10,7 @@
         <item name="colorSecondaryVariant">@color/white_FFFFFF</item>
         <item name="colorOnSecondary">@color/white_FFFFFF</item>
         <!-- Background color. -->
-        <item name="android:colorBackground">@color/white_FFFFFF</item>
+        <item name="android:colorBackground">@color/gray_323546</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Default font. -->

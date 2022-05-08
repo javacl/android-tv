@@ -2,12 +2,13 @@ package com.huma.sample.features.video.data
 
 import android.content.Context
 import androidx.leanback.widget.ArrayObjectAdapter
+import androidx.leanback.widget.FocusHighlight
 import androidx.leanback.widget.HeaderItem
 import androidx.leanback.widget.ListRow
-import androidx.leanback.widget.ListRowPresenter
 import com.huma.sample.R
 import com.huma.sample.features.video.data.entities.VideoEntity
 import com.huma.sample.features.video.ui.VideoListPresenter
+import com.huma.sample.features.video.ui.VideoListRowPresenter
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
@@ -20,7 +21,7 @@ class VideoLocalDataSource @Inject constructor(
 
     fun getVideoList() = flow {
         emit(
-            ArrayObjectAdapter(ListRowPresenter()).apply {
+            ArrayObjectAdapter(VideoListRowPresenter()).apply {
 
                 val videoListPresenter = VideoListPresenter()
 
