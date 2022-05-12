@@ -2,12 +2,14 @@
 
 buildscript {
     ext.hilt_version = '2.40.1'
+    ext.navigation_version = "2.4.2"
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
     }
 }
 
