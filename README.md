@@ -14,7 +14,7 @@ For more information about the MVVM architecture used in the project, refer to t
    * Flow
    * ViewModel
    * Hilt
-<br/><br/>
+
 <img src='https://user-images.githubusercontent.com/45559398/172337141-f1704eb0-9eb3-4acd-bb99-ab3870da389d.png' width='800'>
 
 ### I hope you found it useful. ❤️
