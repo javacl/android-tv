@@ -4,7 +4,7 @@ Hi everyone. I'm javad sadeghi a simple android developer. 🧍‍
 
 This is a sample project for android tv and the architecture of this project is clean MVVM. 😜
 
-For more information about the MVVM architecture used in the project, refer to this link --->  [Click here](https://github.com/javacl/about-me)
+For more information about the clean MVVM architecture used in the project, refer to this link --->  [Click here](https://github.com/javacl/about-me)
 
 ### Technologies used in the project 😎
    * Leanback
