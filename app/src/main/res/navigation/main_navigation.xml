@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/navigation_videoListFragment"
-        android:name="com.huma.sample.features.video.ui.VideoListFragment"
+        android:name="com.android.tv.features.video.ui.VideoListFragment"
         android:label="fragment_video_list" />
 
 </navigation>

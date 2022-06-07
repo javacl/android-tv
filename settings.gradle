@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "huma-sample"
+rootProject.name = "android-tv"
 include ':app'
